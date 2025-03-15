@@ -97,5 +97,39 @@
     <footer>
         <p>&copy; 2025 Página de Tutorías. Todos los derechos reservados.</p>
     </footer>
+
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    
+        createChat({
+	webhookUrl: 'https://sam-pruebas.app.n8n.cloud/webhook/f136097c-ff86-4a32-8543-662a52d3a9cb/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'es',
+	initialMessages: [
+		'Hola, bienvenido! 👋',
+		'Soy el ChatBot de TutorIA, en qué puedo ayudarte?'
+	],
+	i18n: {
+		es: {
+			title: "Hola, bienvenido! 👋",
+			subtitle: "Inicia un chat. Estamos disponibles las 24 horas, los 7 días de la semana.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Escribe tu pregunta..',
+		},
+	},
+});
+    </script>
+
 </body>
 </html>
